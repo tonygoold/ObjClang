@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 R. Tony Goold. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface ObjClang : NSObject
-
-@end
+#import "ClangCursor.h"
+#import "ClangDiagnostic.h"
+#import "ClangIndex.h"
+#import "ClangTranslationUnit.h"

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4510"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="DependencyDocument">
+            <connections>
+                <outlet property="currentFileName" destination="w2R-2h-QgA" id="5Wb-5d-LXm"/>
+                <outlet property="dependencyBrowser" destination="dVk-0X-vIb" id="KnY-vA-fL2"/>
+                <outlet property="fileProgress" destination="4HF-rh-dql" id="WMO-Of-Aan"/>
+                <outlet property="pathControl" destination="JO5-DM-xBt" id="j7A-yo-iUN"/>
+                <outlet property="window" destination="5" id="18"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="133" y="235" width="742" height="526"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="94" height="86"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="742" height="526"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JO5-DM-xBt">
+                        <rect key="frame" x="98" y="486" width="624" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <pathCell key="cell" controlSize="small" selectable="YES" alignment="left" id="bA9-X4-irL">
+                            <font key="font" metaFont="smallSystem"/>
+                            <url key="url" string="file://localhost/Applications/"/>
+                            <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                        </pathCell>
+                    </pathControl>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jaf-cO-iPV">
+                        <rect key="frame" x="15" y="482" width="80" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="QKL-ae-9PR"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Analyze…" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tt6-Pd-G5i">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="chooseFolder:" target="-2" id="nIN-tH-YoA"/>
+                        </connections>
+                    </button>
+                    <browser verticalHuggingPriority="750" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="100" minColumnWidth="100" maxVisibleColumns="2" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="auto" translatesAutoresizingMaskIntoConstraints="NO" id="dVk-0X-vIb">
+                        <rect key="frame" x="20" y="31" width="702" height="457"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="0Yq-gT-SBF"/>
+                        </connections>
+                    </browser>
+                    <progressIndicator hidden="YES" maxValue="100" displayedWhenStopped="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="4HF-rh-dql">
+                        <rect key="frame" x="184" y="6" width="538" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w2R-2h-QgA">
+                        <rect key="frame" x="18" y="9" width="162" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="156" id="vCf-xc-cQ6"/>
+                        </constraints>
+                        <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Filename" id="uUD-Bd-WjH">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="trailing" secondItem="JO5-DM-xBt" secondAttribute="trailing" id="5tZ-cV-0f1"/>
+                    <constraint firstItem="4HF-rh-dql" firstAttribute="top" secondItem="dVk-0X-vIb" secondAttribute="bottom" constant="6" id="Fej-Qr-Vil"/>
+                    <constraint firstItem="4HF-rh-dql" firstAttribute="leading" secondItem="w2R-2h-QgA" secondAttribute="trailing" constant="7" id="I2c-qB-YhO"/>
+                    <constraint firstAttribute="trailing" secondItem="dVk-0X-vIb" secondAttribute="trailing" constant="20" symbolic="YES" id="LJM-8l-bjY"/>
+                    <constraint firstAttribute="bottom" secondItem="dVk-0X-vIb" secondAttribute="bottom" constant="31" id="Lsu-Rc-Uex"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="top" secondItem="jaf-cO-iPV" secondAttribute="bottom" constant="22" id="NYC-SR-Iqz"/>
+                    <constraint firstItem="JO5-DM-xBt" firstAttribute="leading" secondItem="jaf-cO-iPV" secondAttribute="trailing" constant="8" id="ODj-ut-9P0"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="20" symbolic="YES" id="OVp-uT-bHB"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="leading" secondItem="w2R-2h-QgA" secondAttribute="leading" constant="-1" id="Y5U-eK-R79"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="trailing" secondItem="4HF-rh-dql" secondAttribute="trailing" id="ehc-hN-egc"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="leading" secondItem="jaf-cO-iPV" secondAttribute="leading" id="ekM-H6-Mv7"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="top" secondItem="6" secondAttribute="top" constant="60" id="nb5-JZ-gOI"/>
+                    <constraint firstItem="w2R-2h-QgA" firstAttribute="top" secondItem="dVk-0X-vIb" secondAttribute="bottom" constant="8" id="x2z-UU-gkj"/>
+                    <constraint firstItem="dVk-0X-vIb" firstAttribute="top" secondItem="JO5-DM-xBt" secondAttribute="bottom" constant="20" id="xfQ-ab-DL2"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="17"/>
+            </connections>
+        </window>
+        <customObject id="-3" userLabel="Application"/>
+    </objects>
+</document>
