@@ -1,18 +1,18 @@
 //
-//  ObjCDepTests.m
-//  ObjCDepTests
+//  ClangDependencyCase.m
+//  ObjClang
 //
-//  Created by R. Tony Goold on 2014-01-28.
+//  Created by R. Tony Goold on 2/8/2014.
 //  Copyright (c) 2014 R. Tony Goold. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ObjCDepTests : XCTestCase
+@interface ClangDependencyCase : XCTestCase
 
 @end
 
-@implementation ObjCDepTests
+@implementation ClangDependencyCase
 
 - (void)setUp
 {
@@ -26,9 +26,9 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testReturnDependency
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
 }
 
 @end
